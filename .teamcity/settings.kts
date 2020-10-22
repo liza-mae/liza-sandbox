@@ -28,13 +28,6 @@ version = "2020.1"
 project {
 
     buildType(Build)
-    id("HelloWorld")
-    name = "Hello world"
-    steps {
-        script {
-            scriptContent = "echo 'Hello world!'"
-        }
-    }
 }
 
 object Build : BuildType({
@@ -46,6 +39,12 @@ object Build : BuildType({
 
     triggers {
         vcs {
+        }
+    }
+    
+    steps {
+        script {
+            scriptContent = "echo 'Hello world!'"
         }
     }
 })
