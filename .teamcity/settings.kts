@@ -32,7 +32,11 @@ project {
 
 object Build : BuildType({
     name = "Build"
-
+    steps {
+        script {
+            scriptContent = "echo 'Hello World'"
+        }
+    }
     vcs {
         root(DslContext.settingsRoot)
     }
