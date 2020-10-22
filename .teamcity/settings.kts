@@ -26,25 +26,23 @@ To debug in IntelliJ Idea, open the 'Maven Projects' tool window (View
 version = "2020.1"
 
 project {
-
-    buildType(Build)
+    buildType(HelloWorld)
 }
 
-object Build : BuildType({
-    name = "Build"
-
+object HelloWorld: BuildType({
+    name = "Hello world"
     vcs {
         root(DslContext.settingsRoot)
     }
 
-    triggers {
-        vcs {
-        }
-    }
-    
     steps {
         script {
             scriptContent = "echo 'Hello world!'"
         }
     }
+    triggers {
+        vcs {
+        }
+    }
 })
+
