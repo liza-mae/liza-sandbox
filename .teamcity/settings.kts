@@ -1,4 +1,5 @@
 import jetbrains.buildServer.configs.kotlin.v2019_2.*
+import jetbrains.buildServer.configs.kotlin.v2019_2.triggers.vcs
 
 /*
 The settings script is an entry point for defining a TeamCity
@@ -25,20 +26,17 @@ To debug in IntelliJ Idea, open the 'Maven Projects' tool window (View
 version = "2020.1"
 
 project {
-    buildType(HelloWorld)
+
+    buildType(Build)
 }
 
-object HelloWorld: BuildType({
-    name = "Hello world"
+object Build : BuildType({
+    name = "Build"
+
     vcs {
         root(DslContext.settingsRoot)
     }
 
-    steps {
-        script {
-            scriptContent = "echo 'Hello world!'"
-        }
-    }
     triggers {
         vcs {
         }
