@@ -27,18 +27,20 @@ version = "2020.1"
 
 project {
 
-    buildType(Build)
+    buildType(HelloWorld)
 }
 
-object Build : BuildType({
-    name = "Build"
-
+object HelloWorld : BuildType({
+    name = "Hello World"
     vcs {
         root(DslContext.settingsRoot)
     }
-
-    triggers {
-        vcs {
+    steps {
+        script {
+            scriptContent = "echo 'Hello World'"
         }
+    }
+    triggers {
+        vcs { }
     }
 })
