@@ -40,7 +40,7 @@ object HelloWorld : BuildType({
     }
     steps {
         script {
-            scriptContent = "echo 'Hello World Test Update'"
+            scriptContent = "echo 'Hello World Test Update Take 2'"
         }
     }
     triggers {
